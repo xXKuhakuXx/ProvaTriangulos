@@ -15,7 +15,7 @@ namespace ProvaTriangulos.ConsoleApp
             {
 
                 Console.WriteLine("Introduza x: ");
-                string strX = Console.ReadLine();
+                string strX = Console.ReadLine(); 
 
                 Console.WriteLine("Introduza y: ");
                 string strY = Console.ReadLine();
@@ -55,26 +55,30 @@ namespace ProvaTriangulos.ConsoleApp
                 Console.WriteLine("Deseja Continuar ? \nDigite 1 Para continuar \nDigite 2 Para sair");
                 opcao = Console.ReadLine();
 
-                if (opcao != "1" && opcao != "2")
+                 if (opcao == "2")
                 {
-                    Console.WriteLine("Opçao invalida, tente novamente !");
+                    Console.WriteLine("Muito Obrigado Volte Sempre!");
                     Console.ReadLine();
-                    
-                  
-                }
-                else if (opcao == "1")
-                {
-                    Console.Clear();
-                    continue;
-                    
-                }
-                else if (opcao == "2")
-                {
                     break;
                 }
 
 
-            } while (opcao == "1");
+                else if (opcao == "1")
+                {
+                    Console.Clear();
+                    continue;
+
+                }
+                else if (opcao != "1" || opcao != "2" )
+                {
+                    Console.WriteLine("Opçao invalida, tente novamente !");
+                    Console.ReadLine();
+                    
+                   
+                }
+
+
+            } while (opcao == "1" || opcao != "2");
           
             
 
