@@ -29,7 +29,13 @@ namespace ProvaTriangulos.ConsoleApp
                 double Y = Convert.ToDouble(strY);
                 double Z = Convert.ToDouble(strZ);
 
-                if (X == Y && X == Z)
+                if (X + Y < Z || X + Z < Y || Y + Z < X || X <= 0 || Y <= 0 || Z <= 0)
+                {
+                    Console.WriteLine("Triangulo Invalido!");
+                    Console.ReadLine();
+                }
+
+                else if (X == Y && X == Z)
                 {
                     Console.WriteLine("Triangulo Equilátero!");
                     Console.ReadLine();
@@ -40,48 +46,35 @@ namespace ProvaTriangulos.ConsoleApp
                     Console.ReadLine();
                 }
 
-                else if (X + Y < Z || X + Z < Y || Y + Z < X || X <= 0 || Y <= 0 || Z <= 0)
-                {
-                    Console.WriteLine("Triangulo Invalido!");
-                    Console.ReadLine();
-                }
-
                 else
                     Console.WriteLine("Triangulo Escaleno! ");
                 Console.ReadLine();
 
 
-
-                Console.WriteLine("Deseja Continuar ? \nDigite 1 Para continuar \nDigite 2 Para sair");
+                do
+                {
+                    Console.WriteLine("Deseja Continuar ? \nDigite 1 Para continuar \nDigite 2 Para sair");
                 opcao = Console.ReadLine();
 
-                 if (opcao == "2")
-                {
-                    Console.WriteLine("Muito Obrigado Volte Sempre!");
-                    Console.ReadLine();
-                    break;
-                }
+                    if (opcao == "2")
+                    {
+                        Console.WriteLine("Muito Obrigado Volte Sempre!");
+                        Console.ReadLine();
+                        break;
+                    }
 
+                    else if (opcao != "1" && opcao != "2")
+                    {
+                        Console.WriteLine("Opçao invalida, tente novamente !");
+                        Console.ReadLine();
 
-                else if (opcao == "1")
-                {
-                    Console.Clear();
-                    continue;
+                    }
 
-                }
-                else if (opcao != "1" || opcao != "2" )
-                {
-                    Console.WriteLine("Opçao invalida, tente novamente !");
-                    Console.ReadLine();
-                    
-                   
-                }
+                }while (opcao != "1" && opcao != "2");
 
+                Console.Clear();
 
-            } while (opcao == "1" || opcao != "2");
-          
-            
-
+            } while (opcao == "1");
         }
     }
 }
